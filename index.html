@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Travelicious Restaurant · Wayanad Travel Itinerary</title>
+<meta name="description" content="Twenty-one Wayanad destinations mapped from the gate of Travelicious Restaurant on Edakkal Road, Ambalavayal — with distances, notes and directions.">
+<link rel="icon" href="assets/tr-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TRAVELICIOUS · WAYANAD ITINERARY
+   Palette : estate green + brass  |  Type : Marcellus / Jost
+   ============================================================ */
+:root{
+  --ink:#0C1712;
+  --forest:#132A20;
+  --forest-2:#1B3728;
+  --moss:#2E4A39;
+  --brass:#C9A55E;
+  --brass-lo:#8E7238;
+  --brass-hi:#E7D3A4;
+  --parchment:#F2EEE4;
+  --bone:#FBF9F4;
+  --stone:#6E7A72;
+  --stone-lo:#9AA49D;
+
+  --head:74px;
+  --shell:1240px;
+  --r:2px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--ink);color:var(--parchment);
+  font-family:'Jost',system-ui,sans-serif;font-weight:300;
+  font-size:16.5px;line-height:1.65;letter-spacing:.005em;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+h1,h2,h3,.display{font-family:'Marcellus',Georgia,serif;font-weight:400;letter-spacing:.005em;line-height:1.12;margin:0}
+
+.shell{width:min(100% - 2.6rem,var(--shell));margin-inline:auto}
+section[id]{scroll-margin-top:calc(var(--head) + 8px)}
+
+/* --- eyebrow / rules -------------------------------------- */
+.eyebrow{
+  font-size:.66rem;font-weight:500;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--brass);margin:0 0 1.1rem;
+}
+.eyebrow.dim{color:var(--brass-lo)}
+.rule{height:1px;background:linear-gradient(90deg,var(--brass) 0%,rgba(201,165,94,.12) 100%);border:0;margin:0}
+
+/* --- buttons ---------------------------------------------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.92rem 1.6rem;border:1px solid var(--brass);
+  color:var(--brass-hi);text-decoration:none;background:transparent;
+  font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;
+  border-radius:var(--r);transition:background .45s var(--ease),color .45s var(--ease);
+}
+.btn:hover,.btn:focus-visible{background:var(--brass);color:var(--ink)}
+.btn--solid{background:var(--brass);color:var(--ink)}
+.btn--solid:hover,.btn--solid:focus-visible{background:var(--brass-hi);color:var(--ink)}
+:focus-visible{outline:2px solid var(--brass-hi);outline-offset:3px}
+
+/* ============================================================
+   MASTHEAD
+   ============================================================ */
+.masthead{
+  position:sticky;top:0;z-index:60;
+  background:rgba(12,23,18,.9);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(201,165,94,.2);
+}
+.masthead__in{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:.85rem 0}
+.masthead img{height:46px;width:auto}
+.nav{display:flex;gap:2.1rem;list-style:none;margin:0;padding:0}
+.nav a{
+  text-decoration:none;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--stone-lo);padding-bottom:3px;border-bottom:1px solid transparent;transition:.35s var(--ease);
+}
+.nav a:hover,.nav a:focus-visible{color:var(--brass-hi);border-color:var(--brass)}
+.masthead .btn{padding:.62rem 1.15rem}
+.masthead__end{display:flex;align-items:center;gap:1.05rem}
+.ig{display:inline-flex;color:var(--stone-lo);transition:color .35s var(--ease)}
+.ig svg{width:21px;height:21px}
+.ig:hover,.ig:focus-visible{color:var(--brass-hi)}
+@media(max-width:900px){.nav{display:none}}
+@media(max-width:520px){.masthead .btn{display:none}.masthead img{height:38px}}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;overflow:hidden;background:var(--ink);isolation:isolate}
+.hero__ridge{position:absolute;inset:auto 0 0 0;width:100%;height:62%;z-index:-1;opacity:.85}
+.hero__glow{
+  position:absolute;left:50%;top:8%;translate:-50% 0;width:min(900px,110%);aspect-ratio:1;
+  background:radial-gradient(circle,rgba(201,165,94,.13) 0%,transparent 62%);z-index:-2;pointer-events:none;
+}
+.hero__in{padding:clamp(5rem,13vw,9.5rem) 0 clamp(7rem,15vw,11rem);max-width:47rem}
+.hero h1{font-size:clamp(2.4rem,6.2vw,4.35rem);margin-bottom:1.6rem}
+.hero h1 em{font-style:normal;color:var(--brass)}
+.hero__lede{color:#C9D3CB;font-size:clamp(1rem,1.6vw,1.16rem);max-width:36rem;margin:0 0 2.6rem}
+.hero__cta{display:flex;flex-wrap:wrap;gap:.85rem}
+
+/* thin stat strip under hero */
+.gauge{border-top:1px solid rgba(201,165,94,.22);border-bottom:1px solid rgba(201,165,94,.22);background:rgba(19,42,32,.5)}
+.gauge__in{display:grid;grid-template-columns:repeat(4,1fr)}
+.gauge div{padding:1.5rem .6rem;text-align:center;border-left:1px solid rgba(201,165,94,.14)}
+.gauge div:first-child{border-left:0}
+.gauge b{display:block;font-family:'Marcellus',serif;font-size:1.55rem;color:var(--brass-hi);font-weight:400}
+.gauge span{font-size:.6rem;letter-spacing:.24em;text-transform:uppercase;color:var(--stone)}
+@media(max-width:640px){.gauge__in{grid-template-columns:repeat(2,1fr)}.gauge div:nth-child(3){border-left:0}.gauge div:nth-child(n+3){border-top:1px solid rgba(201,165,94,.14)}}
+
+/* ============================================================
+   THE HOUSE  (restaurant details)
+   ============================================================ */
+.house{background:var(--parchment);color:#20302A;padding:clamp(4rem,9vw,6.5rem) 0}
+.house__grid{display:grid;grid-template-columns:1.05fr 1.25fr;gap:clamp(2.5rem,6vw,5rem);align-items:start}
+.house h2{font-size:clamp(1.9rem,4vw,2.7rem);color:#14251D;margin-bottom:1.1rem}
+.house p{color:#4C5A53;max-width:34rem}
+.house .eyebrow{color:var(--brass-lo)}
+
+.plaque{border:1px solid rgba(20,37,29,.16);background:var(--bone)}
+.plaque dl{margin:0;display:grid;grid-template-columns:auto 1fr}
+.plaque dt{
+  padding:1.05rem 1.4rem;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+  color:#7C8A82;border-bottom:1px solid rgba(20,37,29,.1);white-space:nowrap;
+}
+.plaque dd{
+  margin:0;padding:1.05rem 1.4rem 1.05rem 0;color:#20302A;font-weight:400;
+  border-bottom:1px solid rgba(20,37,29,.1);
+}
+.plaque dl>:nth-last-child(-n+2){border-bottom:0}
+.plaque dd a{color:#20302A;text-decoration-color:var(--brass-lo);text-underline-offset:4px}
+.plaque dd a:hover{color:var(--brass-lo)}
+.house__actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.6rem}
+.house .btn{border-color:var(--brass-lo);color:var(--brass-lo)}
+.house .btn:hover,.house .btn:focus-visible{background:var(--brass-lo);color:var(--bone)}
+.house .btn--solid{background:#14251D;border-color:#14251D;color:var(--parchment)}
+.house .btn--solid:hover,.house .btn--solid:focus-visible{background:var(--brass-lo);border-color:var(--brass-lo);color:var(--bone)}
+@media(max-width:860px){.house__grid{grid-template-columns:1fr}}
+@media(max-width:480px){
+  .plaque dl{grid-template-columns:1fr}
+  .plaque dt{padding-bottom:.15rem;border-bottom:0}
+  .plaque dd{padding:0 1.4rem 1.05rem}
+}
+
+/* ============================================================
+   ITINERARY
+   ============================================================ */
+.itinerary{background:var(--ink);padding:clamp(4.5rem,9vw,7rem) 0 clamp(3rem,6vw,5rem)}
+.itinerary__head{max-width:44rem;margin-bottom:2.6rem}
+.itinerary h2{font-size:clamp(1.9rem,4.4vw,2.9rem);margin-bottom:1rem}
+.itinerary__head p{color:#A9B5AD;margin:0}
+
+/* radius filter */
+.scale{
+  display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;
+  padding:1.05rem 0;border-top:1px solid rgba(201,165,94,.22);border-bottom:1px solid rgba(201,165,94,.22);
+  position:sticky;top:var(--head);z-index:40;background:rgba(12,23,18,.94);backdrop-filter:blur(12px);
+}
+.scale__label{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--stone);margin-right:.7rem}
+.chip{
+  appearance:none;cursor:pointer;background:transparent;color:var(--stone-lo);
+  border:1px solid rgba(201,165,94,.3);border-radius:var(--r);
+  padding:.5rem 1.05rem;font-family:inherit;font-size:.68rem;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;transition:.35s var(--ease);
+}
+.chip:hover{color:var(--brass-hi);border-color:var(--brass)}
+.chip[aria-pressed="true"]{background:var(--brass);border-color:var(--brass);color:var(--ink)}
+.scale__count{margin-left:auto;font-size:.68rem;letter-spacing:.14em;color:var(--stone);white-space:nowrap}
+@media(max-width:720px){.scale__count{width:100%;margin:.25rem 0 0;text-align:left}}
+
+/* distance band heading */
+.band{margin:clamp(2.8rem,5vw,4rem) 0 1.6rem;display:flex;align-items:baseline;gap:1.2rem}
+.band h3{font-size:clamp(1.15rem,2.2vw,1.45rem);color:var(--brass-hi);white-space:nowrap}
+.band span{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--stone);white-space:nowrap}
+.band::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(201,165,94,.4),rgba(201,165,94,.04))}
+.band[hidden]{display:none}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.6rem}
+.card{
+  display:flex;flex-direction:column;background:var(--forest);
+  border:1px solid rgba(201,165,94,.18);border-radius:var(--r);overflow:hidden;
+  transition:border-color .5s var(--ease),transform .5s var(--ease);
+}
+.card:hover{border-color:rgba(201,165,94,.55);transform:translateY(-4px)}
+.card.is-active{border-color:var(--brass);box-shadow:0 0 0 1px var(--brass)}
+
+.card__fig{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--forest-2);margin:0}
+.card__slides{position:absolute;inset:0;z-index:1}
+.card__slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.card:hover .card__slides img.is-on{transform:scale(1.05)}
+/* contour-line fallback shown until a real photo loads */
+.card__fig::before{
+  content:"";position:absolute;inset:0;
+  --sx:22%; --sy:112%;
+  background:
+    radial-gradient(120% 90% at var(--sx) var(--sy),rgba(201,165,94,.14),transparent 62%),
+    repeating-radial-gradient(circle at var(--sx) var(--sy),transparent 0 16px,rgba(201,165,94,.11) 16px 17px),
+    linear-gradient(160deg,#1D3A2B,#0F2018);
+}
+.card:nth-child(3n+2) .card__fig::before{--sx:78%;--sy:114%}
+.card:nth-child(3n)   .card__fig::before{--sx:50%;--sy:118%}
+.card:nth-child(4n+1) .card__fig::before{filter:hue-rotate(-6deg)}
+.card__slides img{opacity:0;transition:opacity .8s var(--ease),transform 1.1s var(--ease)}
+.card__slides img.is-on{opacity:1}
+.card__slides img:not([src]),.card__slides img[src=""]{display:none}
+
+/* slideshow controls — only present when a card has more than one photo */
+.slide-nav{
+  position:absolute;z-index:4;top:calc(50% - 8px);transform:translateY(-50%);
+  width:34px;height:34px;border-radius:50%;border:1px solid rgba(201,165,94,.35);
+  display:grid;place-items:center;cursor:pointer;color:#F2EEE4;
+  background:rgba(12,23,18,.5);backdrop-filter:blur(3px);
+  opacity:0;transition:opacity .35s var(--ease),background .3s var(--ease),border-color .3s var(--ease);
+}
+.card__fig:hover .slide-nav,.slide-nav:focus-visible{opacity:1}
+.slide-nav:hover{background:rgba(12,23,18,.82);border-color:var(--brass)}
+.slide-nav--prev{left:.55rem}
+.slide-nav--next{right:.55rem}
+.slide-nav svg{width:16px;height:16px}
+.slide-dots{
+  position:absolute;z-index:4;left:0;right:0;bottom:.62rem;
+  display:flex;gap:.34rem;justify-content:center;pointer-events:none;
+}
+.slide-dots button{
+  pointer-events:auto;width:6px;height:6px;padding:0;border:0;border-radius:50%;cursor:pointer;
+  background:rgba(242,238,228,.45);transition:background .3s var(--ease),width .3s var(--ease);
+}
+.slide-dots button:hover{background:rgba(242,238,228,.8)}
+.slide-dots button.is-on{background:var(--brass-hi);width:15px;border-radius:3px}
+@media(prefers-reduced-motion:reduce){
+  .card__slides img{transition:opacity .01ms}
+  .card:hover .card__slides img.is-on{transform:none}
+}
+
+/* Google Places attribution — required when serving API photos */
+.credit{
+  position:absolute;z-index:3;right:0;bottom:0;max-width:72%;
+  padding:.3rem .6rem;background:rgba(12,23,18,.72);backdrop-filter:blur(3px);
+  font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,238,228,.62);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.credit a{color:inherit;text-decoration:none}
+.credit a:hover,.credit a:focus-visible{color:var(--brass-hi)}
+.card__fig.is-loading::after{
+  content:"";position:absolute;z-index:2;left:0;top:0;height:2px;width:100%;
+  background:linear-gradient(90deg,transparent,var(--brass),transparent);
+  animation:sweep 1.4s linear infinite;
+}
+@keyframes sweep{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+
+.km{
+  position:absolute;z-index:2;left:0;bottom:0;
+  background:var(--brass);color:var(--ink);
+  padding:.42rem .85rem;font-size:.72rem;font-weight:600;letter-spacing:.08em;
+  font-variant-numeric:tabular-nums;
+}
+.km small{font-size:.62rem;font-weight:500;letter-spacing:.14em;opacity:.72}
+
+.card__body{padding:1.35rem 1.4rem 1.5rem;display:flex;flex-direction:column;flex:1;gap:.6rem}
+.card__kind{font-size:.58rem;letter-spacing:.26em;text-transform:uppercase;color:var(--brass-lo)}
+.card h4{font-family:'Marcellus',serif;font-weight:400;font-size:1.28rem;line-height:1.24;margin:0;color:var(--parchment)}
+.card p{margin:0;font-size:.9rem;line-height:1.6;color:#9FAEA4;flex:1}
+.card__foot{display:flex;gap:.5rem .95rem;flex-wrap:wrap;align-items:center;margin-top:.55rem;padding-top:.95rem;border-top:1px solid rgba(201,165,94,.15)}
+.link{
+  display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;
+  font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+  color:var(--brass);border-bottom:1px solid transparent;padding-bottom:2px;transition:.35s var(--ease);
+  background:none;border-top:0;border-left:0;border-right:0;cursor:pointer;font-family:inherit;
+}
+.link:hover,.link:focus-visible{color:var(--brass-hi);border-bottom-color:var(--brass)}
+.link svg{width:11px;height:11px;flex:none}
+.link.is-muted{color:var(--stone)}
+.link.is-muted:hover{color:var(--brass-hi)}
+
+/* ============================================================
+   MAP
+   ============================================================ */
+.mapsec{background:var(--forest);border-top:1px solid rgba(201,165,94,.2);padding:clamp(4rem,8vw,6rem) 0}
+.mapsec__head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:1.5rem;margin-bottom:2rem}
+.mapsec h2{font-size:clamp(1.7rem,3.6vw,2.4rem)}
+.mapsec__note{color:#9FAEA4;font-size:.88rem;max-width:26rem;margin:0}
+.mapframe{position:relative;border:1px solid rgba(201,165,94,.32);background:var(--ink);aspect-ratio:16/9;min-height:340px}
+.mapframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:saturate(.85)}
+.mapcap{
+  display:flex;flex-wrap:wrap;align-items:center;gap:.9rem;justify-content:space-between;
+  margin-top:.9rem;font-size:.72rem;letter-spacing:.1em;color:var(--stone-lo);
+}
+.mapcap strong{color:var(--brass-hi);font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:.68rem}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.foot{background:var(--ink);border-top:1px solid rgba(201,165,94,.2);padding:clamp(3.5rem,7vw,5rem) 0 2.2rem}
+.foot__grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:2.5rem;align-items:start}
+.foot img{height:76px;width:auto;margin-bottom:1.1rem}
+.foot p{color:#93A099;font-size:.9rem;margin:0 0 .35rem;max-width:22rem}
+.ig-line{margin-top:1.1rem}
+.ig-line svg{width:14px;height:14px}
+.foot h5{font-family:'Jost',sans-serif;font-size:.62rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);margin:0 0 1rem}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.foot ul a{color:#93A099;text-decoration:none;font-size:.9rem;transition:color .3s var(--ease)}
+.foot ul a:hover,.foot ul a:focus-visible{color:var(--brass-hi)}
+.foot__base{
+  margin-top:3rem;padding-top:1.4rem;border-top:1px solid rgba(201,165,94,.15);
+  display:flex;flex-wrap:wrap;gap:.8rem;justify-content:space-between;
+  font-size:.68rem;letter-spacing:.1em;color:#5F6C65;
+}
+@media(max-width:820px){.foot__grid{grid-template-columns:1fr 1fr}.foot__grid>:first-child{grid-column:1/-1}}
+@media(max-width:520px){.foot__grid{grid-template-columns:1fr}}
+
+/* --- reveal ------------------------------------------------ */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+
+<style>
+/* ============================================================
+   INTERACTIVE FX LAYER
+   Custom cursor + page-wide motion. Entirely progressive: every
+   "start-hidden" state is gated behind body.fx (added by JS), so
+   with JS off the site renders exactly as before. Disabled on
+   touch / coarse pointers and under prefers-reduced-motion.
+   ============================================================ */
+
+/* --- scroll progress bar --- */
+.fx-progress{
+  position:fixed;inset:0 0 auto 0;height:2px;z-index:200;
+  transform:scaleX(0);transform-origin:0 50%;
+  background:linear-gradient(90deg,var(--brass-lo),var(--brass),var(--brass-hi));
+  box-shadow:0 0 10px rgba(201,165,94,.55);pointer-events:none;
+}
+
+/* --- custom cursor --- */
+.fx-cursor-on,.fx-cursor-on *{cursor:none}
+.fx-cur{position:fixed;left:0;top:0;z-index:300;pointer-events:none;border-radius:50%;translate:-50% -50%}
+.fx-cur--ring{width:34px;height:34px;border:1px solid rgba(201,165,94,.6);
+  transition:width .28s var(--ease),height .28s var(--ease),border-color .28s var(--ease),background-color .28s var(--ease),opacity .3s var(--ease)}
+.fx-cur--dot{width:6px;height:6px;background:var(--brass-hi);
+  transition:width .2s var(--ease),height .2s var(--ease),opacity .3s var(--ease)}
+.fx-cur.is-hidden{opacity:0}
+body.fx-hot .fx-cur--ring{width:62px;height:62px;background-color:rgba(201,165,94,.12);border-color:var(--brass-hi)}
+body.fx-hot .fx-cur--dot{width:4px;height:4px}
+body.fx-down .fx-cur--ring{width:26px;height:26px;background-color:rgba(201,165,94,.22)}
+/* over the light parchment section, darken for contrast */
+body.fx-light .fx-cur--ring{border-color:rgba(142,114,56,.85)}
+body.fx-light.fx-hot .fx-cur--ring{background-color:rgba(142,114,56,.14)}
+body.fx-light .fx-cur--dot{background:var(--brass-lo)}
+/* contextual label that rides above the cursor */
+.fx-cur--label{position:fixed;left:0;top:0;z-index:301;pointer-events:none;
+  translate:-50% -190%;scale:.6;opacity:0;
+  font-size:.5rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;
+  color:var(--ink);background:var(--brass-hi);padding:.3rem .55rem;border-radius:2px;white-space:nowrap;
+  transition:opacity .25s var(--ease),scale .25s var(--ease)}
+body.fx-label .fx-cur--label{opacity:1;scale:1}
+
+/* --- hero entrance (gated on .fx) --- */
+body.fx .hero__in>*{opacity:0;animation:fx-rise .9s var(--ease) forwards}
+body.fx .hero__in>.eyebrow{animation-delay:.12s}
+body.fx .hero__in>h1{animation-delay:.26s}
+body.fx .hero__in>.hero__lede{animation-delay:.46s}
+body.fx .hero__in>.hero__cta{animation-delay:.64s}
+@keyframes fx-rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+/* --- button shine sweep + magnetic hint --- */
+.fx .btn{position:relative;overflow:hidden;will-change:transform}
+.fx .btn::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.30),transparent);
+  transform:skewX(-18deg);transition:left .65s var(--ease);pointer-events:none}
+.fx .btn:hover::after{left:150%}
+
+/* --- card 3D tilt --- */
+.fx .card{transform-style:preserve-3d}
+.fx .card.fx-tilting{transition:transform .12s ease-out}
+.fx .card.fx-tilting .card__slides{scale:1.06;transition:scale .2s var(--ease)}
+
+/* --- itinerary ambient aura --- */
+.itinerary{position:relative}
+.itinerary>.shell{position:relative;z-index:1}
+.fx-aura{position:absolute;inset:-8% 0;z-index:0;overflow:hidden;pointer-events:none}
+.fx-aura i{position:absolute;display:block;border-radius:50%;filter:blur(70px);opacity:.4;
+  background:radial-gradient(circle,rgba(201,165,94,.16),transparent 70%);animation:fx-drift 24s ease-in-out infinite}
+.fx-aura i:nth-child(1){width:34vw;height:34vw;left:-8%;top:6%}
+.fx-aura i:nth-child(2){width:28vw;height:28vw;right:-6%;top:40%;animation-duration:30s;animation-direction:reverse;
+  background:radial-gradient(circle,rgba(46,74,57,.55),transparent 70%)}
+.fx-aura i:nth-child(3){width:24vw;height:24vw;left:34%;bottom:0;animation-duration:34s}
+@keyframes fx-drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(4%,-6%) scale(1.14)}66%{transform:translate(-5%,4%) scale(.9)}}
+
+/* --- scroll-spy active nav link --- */
+.nav a.is-current{color:var(--brass-hi);border-color:var(--brass)}
+
+/* --- extra reveal helper for elements tagged by JS --- */
+body.fx [data-fx-rise]{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+body.fx [data-fx-rise].fx-in{opacity:1;transform:none}
+
+@media(prefers-reduced-motion:reduce){
+  body.fx .hero__in>*{opacity:1;animation:none}
+  body.fx [data-fx-rise]{opacity:1;transform:none}
+  .fx-aura,.fx-progress{display:none}
+  .fx-cur,.fx-cur--label{display:none!important}
+}
+@media(hover:none),(pointer:coarse){
+  .fx-cur,.fx-cur--label{display:none!important}
+  .fx-cursor-on,.fx-cursor-on *{cursor:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ MASTHEAD ═══════════ -->
+<header class="masthead">
+  <div class="shell masthead__in">
+    <a href="#top" aria-label="Travelicious Restaurant, home">
+      <img src="assets/tr-logo.png" alt="Travelicious Restaurant">
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav">
+        <li><a href="#house">The Restaurant</a></li>
+        <li><a href="#itinerary">Itinerary</a></li>
+        <li><a href="#map">Map</a></li>
+      </ul>
+    </nav>
+    <div class="masthead__end">
+      <a class="ig" href="https://www.instagram.com/traveliciousrestaurant/" target="_blank" rel="noopener" aria-label="Travelicious on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <a class="btn btn--solid" href="tel:+917907003644">Call · 79070 03644</a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero" id="top">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <svg class="hero__ridge" viewBox="0 0 1440 420" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 300 L150 232 L280 288 L430 190 L560 262 L700 168 L840 250 L980 196 L1130 272 L1280 214 L1440 284 L1440 420 L0 420Z" fill="#132A20"/>
+    <path d="M0 348 L170 300 L330 346 L500 276 L660 336 L820 288 L1000 350 L1180 300 L1340 352 L1440 322 L1440 420 L0 420Z" fill="#0F2019"/>
+    <path d="M0 392 L240 366 L470 398 L720 362 L960 400 L1200 370 L1440 396 L1440 420 L0 420Z" fill="#0C1712"/>
+  </svg>
+  <div class="shell hero__in">
+    <p class="eyebrow">Travelicious Restaurant · Edakkal Road, Ambalavayal</p>
+    <h1>Twenty-one of Wayanad, measured from <em>our doorstep.</em></h1>
+    <p class="hero__lede">Every distance below starts at our gate on Edakkal Road. Eat first, then pick a direction — the caves are a two-minute drive, and the far edge of the district is still an easy day return.</p>
+    <div class="hero__cta">
+      <a class="btn btn--solid" href="#itinerary">Plan the day</a>
+      <a class="btn" href="#house">Find the restaurant</a>
+    </div>
+  </div>
+</section>
+
+<div class="gauge">
+  <div class="shell gauge__in">
+    <div><b>21</b><span>Destinations</span></div>
+    <div><b>1.8&nbsp;km</b><span>Nearest · Edakkal</span></div>
+    <div><b>46&nbsp;km</b><span>Farthest · Banasura</span></div>
+    <div><b>12–10.30</b><span>Kitchen, daily</span></div>
+  </div>
+</div>
+
+<!-- ═══════════ THE RESTAURANT ═══════════ -->
+<section class="house" id="house">
+  <div class="shell house__grid">
+    <div class="reveal">
+      <p class="eyebrow">The House</p>
+      <h2>A table on the road to the caves.</h2>
+      <p>Travelicious sits on Edakkal Caves Road in Ambalavayal, a little under two kilometres from the climb itself — an open, green-walled dining room with garden seating, built for people who arrive dusty from a trek. Continental plates, wood-fired pizza, steaks, sandwiches and proper coffee, alongside Kerala regulars. Pet friendly, and comfortable for a long lunch.</p>
+      <div class="house__actions">
+        <a class="btn btn--solid" href="https://www.google.com/maps/search/?api=1&amp;query=Travelicious%20Restaurant%20Ambalavayal&amp;query_place_id=ChIJCVtPwxMPpjsRXzuysKKdwlw" target="_blank" rel="noopener">Open in Google Maps</a>
+        <a class="btn" href="tel:+917907003644">Call to reserve</a>
+        <a class="btn" href="https://www.instagram.com/traveliciousrestaurant/" target="_blank" rel="noopener">Follow on Instagram</a>
+      </div>
+    </div>
+
+    <div class="plaque reveal">
+      <dl>
+        <dt>Address</dt>
+        <dd>23/594/D, Edakkal Caves Road, Ambalavayal, Nenmeni, Wayanad, Kerala 673593</dd>
+        <dt>Hours</dt>
+        <dd>12.00 noon – 10.30 pm, every day</dd>
+        <dt>Telephone</dt>
+        <dd><a href="tel:+917907003644">+91 79070 03644</a></dd>
+        <dt>Kitchen</dt>
+        <dd>Continental · Wood-fired pizza · Steaks &amp; grills · Kerala plates · Coffee</dd>
+        <dt>Seating</dt>
+        <dd>Indoor and garden · Family &amp; pet friendly · Suitable for groups and events</dd>
+        <dt>Parking</dt>
+        <dd>On-site, free</dd>
+        <dt>Instagram</dt>
+        <dd><a href="https://www.instagram.com/traveliciousrestaurant/" target="_blank" rel="noopener">@traveliciousrestaurant</a></dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ ITINERARY ═══════════ -->
+<section class="itinerary" id="itinerary">
+  <div class="shell">
+    <div class="itinerary__head reveal">
+      <p class="eyebrow">The Itinerary</p>
+      <h2>Everything worth the drive, in order of distance.</h2>
+      <p>Grouped into three rings, so you can match a destination to the hours you have left. Distances are by road from the restaurant gate. Tap any place to move the map at the foot of the page.</p>
+    </div>
+
+    <div class="scale">
+      <span class="scale__label">Within</span>
+      <button class="chip" type="button" data-radius="5" aria-pressed="false">5 km</button>
+      <button class="chip" type="button" data-radius="15" aria-pressed="false">15 km</button>
+      <button class="chip" type="button" data-radius="30" aria-pressed="false">30 km</button>
+      <button class="chip" type="button" data-radius="all" aria-pressed="true">All 21</button>
+      <span class="scale__count" id="count"></span>
+    </div>
+
+    <div id="bands"></div>
+  </div>
+</section>
+
+<!-- ═══════════ MAP ═══════════ -->
+<section class="mapsec" id="map">
+  <div class="shell">
+    <div class="mapsec__head reveal">
+      <div>
+        <p class="eyebrow">Locations</p>
+        <h2>Where each one sits.</h2>
+      </div>
+      <p class="mapsec__note">The map opens on the restaurant. Choose <em>Show on map</em> on any card above to recentre it, or open the full listing in Google Maps for live directions.</p>
+    </div>
+    <div class="mapframe">
+      <iframe id="gmap" title="Map of the selected Wayanad destination" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=11.6299576,76.2260087&amp;z=14&amp;output=embed"></iframe>
+    </div>
+    <div class="mapcap">
+      <span><strong id="mapLabel">Travelicious Restaurant</strong> — <span id="mapSub">Edakkal Caves Road, Ambalavayal</span></span>
+      <a class="link" id="mapOut" href="https://www.google.com/maps/search/?api=1&amp;query=Travelicious%20Restaurant%20Ambalavayal&amp;query_place_id=ChIJCVtPwxMPpjsRXzuysKKdwlw" target="_blank" rel="noopener">
+        Open in Google Maps
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="foot">
+  <div class="shell">
+    <div class="foot__grid">
+      <div>
+        <img src="assets/tr-logo.png" alt="Travelicious Restaurant">
+        <p>23/594/D, Edakkal Caves Road, Ambalavayal, Nenmeni, Wayanad, Kerala 673593</p>
+        <p>Open daily, 12.00 noon to 10.30 pm</p>
+        <a class="link ig-line" href="https://www.instagram.com/traveliciousrestaurant/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+          @traveliciousrestaurant
+        </a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+917907003644">+91 79070 03644</a></li>
+          <li><a href="https://www.google.com/maps/dir/?api=1&amp;destination=11.6299576,76.2260087" target="_blank" rel="noopener">Get directions</a></li>
+          <li><a href="https://www.instagram.com/traveliciousrestaurant/" target="_blank" rel="noopener">@traveliciousrestaurant</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>On this page</h5>
+        <ul>
+          <li><a href="#house">The restaurant</a></li>
+          <li><a href="#itinerary">Travel itinerary</a></li>
+          <li><a href="#map">Map</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__base">
+      <span>© <span id="yr"></span> Travelicious Restaurant, Wayanad.</span>
+      <span>Road distances are approximate. Check timings and permits before travelling.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   DATA — the twenty-one destinations, as supplied.
+   Each card shows a slideshow. To add photos to one, drop files in
+   assets/images/: the base `img` is slide one, and numbered siblings
+   (edakkal-caves-2.jpg, -3.jpg …) become the following slides — no code
+   change needed. You can also list extra files explicitly with `imgs:[…]`.
+   ============================================================ */
+const CONFIG = {
+  /* Paste a Google Maps Platform key with "Places API (New)" enabled to pull
+     photographs straight from each Google Maps listing. Restrict the key to
+     this site's domain in the Google Cloud console before going live.
+     Leave it empty and the site uses local files in assets/images/ instead. */
+  googleApiKey : "",
+
+  photoWidth   : 1280,   // px requested from Google
+  cacheDays    : 30,     // how long a photo reference is kept in the browser
+  maxPhotos    : 6,      // most slides a single card will show
+  slideMs      : 4800    // auto-advance interval; 0 disables auto-play
+};
+
+const ORIGIN = "11.6299576,76.2260087"; // Travelicious Restaurant
+
+const PLACES = [
+  { name:"Edakkal Caves", km:1.8, kind:"Rock art · Trek",
+    img:"assets/images/edakkal-caves.jpg",
+    note:"Prehistoric petroglyphs cut into a granite cleft, reached by a steep 45-minute climb. Ticket counter closes at 4 pm.",
+    lat:11.6268407, lng:76.2342690, pid:"ChIJ43AFxSIPpjsR3-Cpk3Ypcds" },
+
+  { name:"Ambalavayal Heritage Museum", km:3, kind:"Museum",
+    img:"assets/images/heritage-museum.jpg",
+    note:"Tribal tools, terracotta and hero stones excavated across the district. Small, calm, about half an hour inside.",
+    lat:11.6193121, lng:76.2106106, pid:"ChIJ1W7k--gOpjsRqj9fmOqX17g" },
+
+  { name:"Phantom Rock", km:4.5, kind:"Rock formation",
+    img:"assets/images/phantom-rock.jpg",
+    note:"A weathered boulder shaped like a skull, fifty metres off the car park. A quick stop with wide valley views.",
+    lat:11.6365450, lng:76.2046270, pid:"ChIJifmPB8kOpjsRyMa81R_Jb-A" },
+
+  { name:"Manjapara View Point", km:5, kind:"Viewpoint",
+    img:"assets/images/manjapara-viewpoint.jpg",
+    note:"A short scramble up bare rock to a wide look over the Karapuzha reservoir. Best at sunset; no ticket.",
+    lat:11.6115748, lng:76.2020084, pid:"ChIJz2ubn0gPpjsRvk0OJwOv5x0" },
+
+  { name:"Cheengeri Hill", km:5, kind:"Trekking",
+    img:"assets/images/cheengeri-hill.jpg",
+    note:"A 45-minute rock trek with fixed ropes on the steeper faces. Gates open at 5.30 am for sunrise.",
+    lat:11.6181489, lng:76.1984665, pid:"ChIJN5w6rMYPpjsRZtsYhcY2taQ" },
+
+  { name:"Karapuzha Dam & Adventure Park", km:8.2, kind:"Dam · Adventure",
+    img:"assets/images/karapuzha-dam.jpg",
+    note:"Zipline, giant swing and landscaped gardens along the reservoir. Late afternoon is far kinder than midday.",
+    lat:11.6182901, lng:76.1678346, pid:"ChIJ____KyIMpjsRWCzX0wmq__M" },
+
+  { name:"Nellarachal Viewpoint", km:9.5, kind:"Viewpoint",
+    img:"assets/images/nellarachal-viewpoint.jpg",
+    note:"Meadows and a lily-covered backwater with the Chembra range behind. Arrive an hour before sunset.",
+    lat:11.6011450, lng:76.1771430, pid:"ChIJ6-3YAQANpjsRyMiLnNzcE1A" },
+
+  { name:"Jain Temple, Sulthan Bathery", km:11, kind:"Heritage",
+    img:"assets/images/jain-temple.jpg",
+    note:"A 13th-century granite temple, later used as an armoury by Tipu Sultan. ASI protected; entry is free.",
+    lat:11.6601663, lng:76.2506633, pid:"ChIJB6cAErkIpjsRDUuNtPyp01s" },
+
+  { name:"Sulthan Bathery Town", km:12, kind:"Town",
+    img:"assets/images/sulthan-bathery.jpg",
+    note:"The nearest full-size town — banks, pharmacies, spice shops and the busiest market street in this half of Wayanad.",
+    lat:11.6629136, lng:76.2570217, pid:"ChIJfUteKLsIpjsRzpaZeNy4nOI" },
+
+  { name:"Wayanad Wildlife Sanctuary, Muthanga", km:25, kind:"Safari",
+    img:"assets/images/muthanga-sanctuary.jpg",
+    note:"Jeep and bus safaris into the Nilgiri Biosphere. Two windows only — 7 to 10 am and 3 to 5 pm.",
+    lat:11.6715785, lng:76.3687811, pid:"ChIJVVVVVUkBpjsRY7Dz8ay1Ym8" },
+
+  { name:"Kanthanpara Waterfalls", km:22, kind:"Waterfall",
+    img:"assets/images/kanthanpara-falls.jpg",
+    note:"Three tiers with pools sectioned by depth, deep enough to swim. Steep steps down; last entry around 4.30 pm.",
+    lat:11.5239348, lng:76.1526896, pid:"ChIJIxb6GH5ypjsRyjU-3r1CF1s" },
+
+  { name:"Chembra Peak", km:30, kind:"Trekking",
+    img:"assets/images/chembra-peak.jpg",
+    note:"Wayanad's highest summit, with the heart-shaped lake on the way up. Roughly 88 permits a day — book early.",
+    lat:11.5532988, lng:76.0879402, pid:"ChIJf7SuAFVtpjsRTRjrhFdXlGY" },
+
+  { name:"Soochipara Waterfalls", km:32, kind:"Waterfall",
+    img:"assets/images/soochipara-falls.jpg",
+    note:"Also called Sentinel Rock — a one-kilometre descent to a broad three-tier fall you can bathe beneath.",
+    lat:11.5115356, lng:76.1637859, pid:"ChIJy8AnCG8SpjsRb2yh7cu_Goo" },
+
+  { name:"900 Kandi Glass Bridge", km:36, kind:"Skywalk",
+    img:"assets/images/900-kandi-glass-bridge.jpg",
+    note:"A glass skywalk out over the valley, reached by a rough jeep track from the car park. Jeep fare is charged separately.",
+    lat:11.5026544, lng:76.1109092, pid:"ChIJL8WnFl0TpjsRaJ0oGGqRj9o" },
+
+  { name:"Karlad Lake Adventure Camp", km:37, kind:"Lake · Adventure",
+    img:"assets/images/karlad-lake.jpg",
+    note:"Kayaking, zorbing and a long zipline across the water. Considerably quieter than Wayanad's headline lakes.",
+    lat:11.6499746, lng:75.9827556, pid:"ChIJKZDemKR2pjsRs9CXxhCR5pA" },
+
+  { name:"Pookode Lake", km:38, kind:"Lake",
+    img:"assets/images/pookode-lake.jpg",
+    note:"A freshwater lake ringed by evergreen forest, with pedal boats and a walking path around the rim.",
+    lat:11.5424566, lng:76.0272233, pid:"ChIJiTfRqIhtpjsReKZ1OA3Me9Q" },
+
+  { name:"Lakkidi Viewpoint", km:40, kind:"Viewpoint",
+    img:"assets/images/lakkidi-viewpoint.jpg",
+    note:"The lookout over the nine hairpin bends of the Thamarassery ghat pass. Roadside — park with care.",
+    lat:11.5121995, lng:76.0189339, pid:"ChIJP0u6d7dtpjsRGtRu61e1bqI" },
+
+  { name:"Kuruva Island", km:42, kind:"River island",
+    img:"assets/images/kuruva-island.jpg",
+    note:"A protected river delta crossed by bamboo raft, with marked trails through evergreen forest. Daily visitor cap; no plastic.",
+    lat:11.8216670, lng:76.0922220, pid:"ChIJO16T71PnpTsRoFJgIzvjRqs" },
+
+  { name:"Banasura Sagar Dam", km:43, kind:"Dam",
+    img:"assets/images/banasura-sagar-dam.jpg",
+    note:"The largest earth dam in India, with wooded islands scattered across the reservoir and speedboats on the water.",
+    lat:11.6700000, lng:75.9577780, pid:"ChIJn7X4Cvp2pjsRdLuZRtEsfTM" },
+
+  { name:"Banasura Meenmutty Falls", km:45, kind:"Waterfall · Trek",
+    img:"assets/images/banasura-meenmutty-falls.jpg",
+    note:"A three-tier fall at the end of a 1.5 km forest trek. Entry numbers are limited, so book ahead.",
+    lat:11.6777206, lng:75.9356808, pid:"ChIJ-cplb6h3pjsR3t7Ok5uH2nk" },
+
+  { name:"Banasura Trekking Point", km:46, kind:"Trekking",
+    img:"assets/images/banasura-trekking-point.jpg",
+    note:"A half-day, nine-kilometre round trip over open grassland ridges. A minimum group size applies — confirm before driving out.",
+    lat:11.6754414, lng:75.9393977, pid:"ChIJuUp_8n53pjsR6CPrMrqGlzA" }
+];
+
+const BANDS = [
+  { id:"a", title:"At the doorstep", sub:"Under 5 km · after lunch",      test:p=>p.km<5 },
+  { id:"b", title:"A short drive",   sub:"5 to 15 km · half a day",       test:p=>p.km>=5 && p.km<=15 },
+  { id:"c", title:"The full day",    sub:"Beyond 15 km · start early",    test:p=>p.km>15 }
+];
+
+/* ---------- helpers ---------- */
+const mapsLink = p =>
+  `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(p.name+" Wayanad")}&query_place_id=${p.pid}`;
+const dirLink = p =>
+  `https://www.google.com/maps/dir/?api=1&origin=${ORIGIN}&destination=${p.lat},${p.lng}&destination_place_id=${p.pid}`;
+const embed = (lat,lng,z=14) => `https://maps.google.com/maps?q=${lat},${lng}&z=${z}&output=embed`;
+const ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M9 7h8v8"/></svg>';
+const PIN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>';
+
+function cardHTML(p,i){
+  return `<article class="card reveal" data-km="${p.km}" data-i="${i}">
+    <figure class="card__fig" data-photo="${i}">
+      <div class="card__slides"></div>
+      <span class="km">${p.km}<small> KM</small></span>
+    </figure>
+    <div class="card__body">
+      <p class="card__kind">${p.kind}</p>
+      <h4>${p.name}</h4>
+      <p>${p.note}</p>
+      <div class="card__foot">
+        <button class="link" type="button" data-map="${i}">${PIN} Show on map</button>
+        <a class="link is-muted" href="${dirLink(p)}" target="_blank" rel="noopener">Directions ${ARROW}</a>
+        <a class="link is-muted" href="${mapsLink(p)}" target="_blank" rel="noopener">Google Maps ${ARROW}</a>
+      </div>
+    </div>
+  </article>`;
+}
+
+/* ---------- render ---------- */
+const bandsEl = document.getElementById('bands');
+bandsEl.innerHTML = BANDS.map(b=>{
+  const items = PLACES.map((p,i)=>({p,i})).filter(o=>b.test(o.p));
+  if(!items.length) return '';
+  return `<section data-band="${b.id}">
+    <div class="band"><h3>${b.title}</h3><span>${b.sub}</span></div>
+    <div class="grid">${items.map(o=>cardHTML(o.p,o.i)).join('')}</div>
+  </section>`;
+}).join('');
+
+/* ---------- radius filter ---------- */
+const chips = [...document.querySelectorAll('.chip')];
+const countEl = document.getElementById('count');
+
+function applyRadius(r){
+  let shown = 0;
+  document.querySelectorAll('.card').forEach(c=>{
+    const ok = (r==='all') || (parseFloat(c.dataset.km) <= parseFloat(r));
+    c.hidden = !ok;
+    if(ok) shown++;
+  });
+  document.querySelectorAll('[data-band]').forEach(sec=>{
+    sec.hidden = !sec.querySelector('.card:not([hidden])');
+  });
+  countEl.textContent = `${shown} of 21 shown`;
+}
+chips.forEach(ch=>ch.addEventListener('click',()=>{
+  chips.forEach(c=>c.setAttribute('aria-pressed', String(c===ch)));
+  applyRadius(ch.dataset.radius);
+}));
+applyRadius('all');
+
+/* ---------- map wiring ---------- */
+const frame = document.getElementById('gmap');
+const label = document.getElementById('mapLabel');
+const sub   = document.getElementById('mapSub');
+const out   = document.getElementById('mapOut');
+
+document.addEventListener('click', e=>{
+  const btn = e.target.closest('[data-map]');
+  if(!btn) return;
+  const p = PLACES[+btn.dataset.map];
+  frame.src = embed(p.lat,p.lng,15);
+  frame.title = `Map of ${p.name}, Wayanad`;
+  label.textContent = p.name;
+  sub.textContent = `${p.km} km from the restaurant · ${p.kind}`;
+  out.href = mapsLink(p);
+  document.querySelectorAll('.card').forEach(c=>c.classList.remove('is-active'));
+  btn.closest('.card').classList.add('is-active');
+  document.getElementById('map').scrollIntoView({behavior:'smooth',block:'start'});
+});
+
+/* ============================================================
+   PHOTOGRAPHS
+   Order of preference per card:
+     1. a local file at assets/images/<name>.jpg      (fastest, free)
+     2. the first photo on the Google Maps listing    (needs an API key)
+     3. the brass contour panel                       (always looks finished)
+   Cards are only resolved once they scroll into view, so filtered-out
+   destinations never cost an API call.
+   ============================================================ */
+let CREDITS = {};
+const CREDITS_READY = fetch('assets/images/credits.json')
+  .then(r => r.ok ? r.json() : {})
+  .then(j => { CREDITS = j || {}; })
+  .catch(() => {});
+
+const canLoad = src => new Promise(res => {
+  const t = new Image();
+  t.onload = () => res(true);
+  t.onerror = () => res(false);
+  t.src = src;
+});
+
+function cacheGet(pid){
+  try{
+    const raw = localStorage.getItem('tr:photo:' + pid);
+    if(!raw) return null;
+    const v = JSON.parse(raw);
+    if(Date.now() - v.ts > CONFIG.cacheDays * 864e5) return null;
+    return v;
+  }catch(e){ return null; }
+}
+function cacheSet(pid,v){
+  try{ localStorage.setItem('tr:photo:' + pid, JSON.stringify({...v, ts:Date.now()})); }catch(e){}
+}
+
+async function googlePhotos(pid){
+  const hit = cacheGet(pid);
+  if(hit && Array.isArray(hit.list)) return hit.list;
+  const url = `https://places.googleapis.com/v1/places/${pid}`
+            + `?fields=photos&key=${CONFIG.googleApiKey}`;
+  const r = await fetch(url);
+  if(!r.ok) throw new Error('Places API ' + r.status);
+  const j = await r.json();
+  const list = (j.photos || []).slice(0, CONFIG.maxPhotos).map(ph=>{
+    const a = (ph.authorAttributions && ph.authorAttributions[0]) || {};
+    return { ref: ph.name, by: a.displayName || 'Google Maps', uri: a.uri || '' };
+  });
+  cacheSet(pid, { list });
+  return list;
+}
+
+const mediaURL = ref =>
+  `https://places.googleapis.com/v1/${ref}/media`
+  + `?maxWidthPx=${CONFIG.photoWidth}&key=${CONFIG.googleApiKey}`;
+
+/* Create or update the photo credit for the slide currently on screen.
+   Passing a falsy credit removes any existing caption (e.g. a slide with none). */
+function setCredit(fig, c){
+  let el = fig.querySelector('.credit');
+  if(!c || !c.by){ if(el) el.remove(); return; }
+  const who = c.uri
+    ? `<a href="${c.uri}" target="_blank" rel="noopener">${c.by}</a>`
+    : c.by;
+  const lic = c.license
+    ? (c.licenseUri
+        ? ` · <a href="${c.licenseUri}" target="_blank" rel="noopener">${c.license}</a>`
+        : ` · ${c.license}`)
+    : (c.source ? ` / ${c.source}` : '');
+  if(!el){
+    el = document.createElement('figcaption');
+    el.className = 'credit';
+    fig.appendChild(el);
+  }
+  el.innerHTML = `Photo · ${who}${lic}`;
+}
+
+/* Find every local photo for a place. The card shows `img` as slide one, plus
+   any `imgs` listed in the data, plus numbered siblings dropped alongside it —
+   name-2.jpg, name-3.jpg … — so extra slides need no code change, just files. */
+async function discoverLocal(p){
+  const found = [];
+  const placeCredit = CREDITS[p.pid] || null;
+  const seen = new Set();
+  /* Each slide takes its own credit if credits.json lists one under its path
+     (needed for CC BY-SA extras by different photographers); otherwise it falls
+     back to the destination's credit keyed by place id. */
+  const push = src => {
+    if(src && !seen.has(src)){ seen.add(src); found.push({ src, credit: CREDITS[src] || placeCredit }); }
+  };
+  const base = p.img || '';
+
+  if(base && await canLoad(base)) push(base);
+
+  if(Array.isArray(p.imgs)){
+    for(const src of p.imgs){ if(await canLoad(src)) push(src); }
+  }
+
+  const m = base.match(/^(.*)\.([a-z0-9]+)$/i);
+  if(m){
+    for(let n=2; n<=CONFIG.maxPhotos; n++){
+      const cand = `${m[1]}-${n}.${m[2]}`;
+      if(await canLoad(cand)) push(cand); else break;   // stop at the first gap
+    }
+  }
+  return found.slice(0, CONFIG.maxPhotos);
+}
+
+/* Turn a figure into a fading slideshow. `slides` is [{src, credit}] and every
+   src is already known to load. One slide → a plain photo, no controls. */
+function buildSlideshow(fig, slides, alt){
+  const wrap = fig.querySelector('.card__slides');
+  let cur = 0, dots = null, timer = null;
+
+  const imgs = slides.map((s, idx)=>{
+    const im = new Image();
+    im.alt = alt; im.loading = 'lazy'; im.decoding = 'async';
+    im.src = s.src;
+    if(idx === 0) im.classList.add('is-on');
+    wrap.appendChild(im);
+    return im;
+  });
+
+  const show = n=>{
+    n = (n + slides.length) % slides.length;
+    imgs[cur].classList.remove('is-on');
+    imgs[n].classList.add('is-on');
+    if(dots){ dots[cur].classList.remove('is-on'); dots[n].classList.add('is-on'); }
+    cur = n;
+    setCredit(fig, slides[n].credit);
+  };
+  setCredit(fig, slides[0].credit);
+
+  if(slides.length < 2) return;                 // single photo: nothing to steer
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const stop = ()=>{ if(timer){ clearInterval(timer); timer = null; } };
+  const play = ()=>{ if(reduce || !CONFIG.slideMs) return; stop(); timer = setInterval(()=>show(cur+1), CONFIG.slideMs); };
+  const go   = n=>{ show(n); play(); };          // a manual move restarts the clock
+
+  const mkNav = (dir, label, d)=>{
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'slide-nav slide-nav--' + dir;
+    b.setAttribute('aria-label', label);
+    b.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="' + d + '"/></svg>';
+    return b;
+  };
+  const prev = mkNav('prev', 'Previous photo', 'M15 6 9 12l6 6');
+  const next = mkNav('next', 'Next photo',     'M9 6l6 6-6 6');
+  prev.addEventListener('click', ()=>go(cur - 1));
+  next.addEventListener('click', ()=>go(cur + 1));
+
+  const dotWrap = document.createElement('div');
+  dotWrap.className = 'slide-dots';
+  dots = slides.map((_, i)=>{
+    const d = document.createElement('button');
+    d.type = 'button'; d.setAttribute('aria-label', 'Photo ' + (i+1) + ' of ' + slides.length);
+    if(i === 0) d.classList.add('is-on');
+    d.addEventListener('click', ()=>go(i));
+    dotWrap.appendChild(d);
+    return d;
+  });
+
+  fig.append(prev, next, dotWrap);
+
+  fig.addEventListener('mouseenter', stop);
+  fig.addEventListener('mouseleave', play);
+  fig.addEventListener('focusin', stop);
+  fig.addEventListener('focusout', play);
+  document.addEventListener('visibilitychange', ()=>{ document.hidden ? stop() : play(); });
+
+  play();
+}
+
+async function hydrate(fig){
+  if(fig.dataset.done) return;
+  fig.dataset.done = '1';
+  const p   = PLACES[+fig.dataset.photo];
+  const alt = `${p.name}, Wayanad`;
+
+  /* 1 — local files (one or several) */
+  await CREDITS_READY;
+  const local = await discoverLocal(p);
+  if(local.length){
+    buildSlideshow(fig, local, alt);
+    return;
+  }
+
+  /* 2 — Google Maps listing (may hold several photos) */
+  if(!CONFIG.googleApiKey) return;
+  fig.classList.add('is-loading');
+  try{
+    const list = await googlePhotos(p.pid);
+    const slides = [];
+    for(const v of list){
+      const src = mediaURL(v.ref);
+      if(await canLoad(src)) slides.push({ src, credit:{ by:v.by, uri:v.uri, source:'Google Maps' } });
+    }
+    if(slides.length) buildSlideshow(fig, slides, alt);
+  }catch(e){
+    console.warn('Photo unavailable for', p.name, '—', e.message);
+  }finally{
+    fig.classList.remove('is-loading');
+  }
+  /* 3 — otherwise the contour panel stands */
+}
+
+const photoIO = new IntersectionObserver(es=>{
+  es.forEach(en=>{ if(en.isIntersecting){ hydrate(en.target); photoIO.unobserve(en.target); } });
+},{rootMargin:'320px 0px'});
+document.querySelectorAll('[data-photo]').forEach(f=>photoIO.observe(f));
+
+/* ---------- reveal on scroll ---------- */
+const io = new IntersectionObserver(es=>{
+  es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+},{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* keep the sticky filter bar flush under the masthead */
+const head = document.querySelector('.masthead');
+const setHead = () => document.documentElement.style.setProperty('--head', head.offsetHeight + 'px');
+setHead();
+addEventListener('resize', setHead);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(setHead);
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+
+<script>
+/* ============================================================
+   INTERACTIVE FX ENGINE
+   Custom cursor, parallax, tilt, magnetic buttons, counters,
+   scroll-spy and progress. Progressive + accessible: bails out
+   of motion features under reduce-motion, and of pointer
+   features on touch / coarse pointers.
+   ============================================================ */
+(function(){
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine   = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const lerp   = (a,b,n)=>a+(b-a)*n;
+  const clamp  = (v,a,b)=>Math.max(a,Math.min(b,v));
+  const el = (tag,cls)=>{ const n=document.createElement(tag); if(cls) n.className=cls; return n; };
+
+  document.body.classList.add('fx');   // unlock the CSS-gated entrance + effects
+
+  /* ---------- scroll progress bar ---------- */
+  const bar = el('div','fx-progress');
+  document.body.appendChild(bar);
+  let progressTarget = 0;
+  function measureProgress(){
+    const h = document.documentElement.scrollHeight - innerHeight;
+    progressTarget = h > 0 ? clamp(scrollY / h, 0, 1) : 0;
+  }
+  addEventListener('scroll', measureProgress, {passive:true});
+  addEventListener('resize', measureProgress);
+  measureProgress();
+
+  /* ---------- hero parallax targets ---------- */
+  const hero  = document.querySelector('.hero');
+  const ridge = document.querySelector('.hero__ridge');
+  const glow  = document.querySelector('.hero__glow');
+
+  /* ---------- itinerary ambient aura ---------- */
+  const itinerary = document.querySelector('.itinerary');
+  if(itinerary && !reduce){
+    const aura = el('div','fx-aura');
+    aura.innerHTML = '<i></i><i></i><i></i>';
+    itinerary.prepend(aura);
+  }
+
+  /* ---------- animated stat counters ---------- */
+  (function counters(){
+    const cells = document.querySelectorAll('.gauge b');
+    cells.forEach(b=>{
+      const raw = b.textContent;
+      // skip ranges like "12–10.30"; animate a single leading number only
+      if(/[–-]\d/.test(raw)) return;
+      const m = raw.match(/^(\d+(?:\.\d+)?)(.*)$/s);
+      if(!m) return;
+      b.dataset.target = m[1];
+      b.dataset.suffix = m[2];
+      b.dataset.dp = (m[1].split('.')[1]||'').length;
+    });
+    const run = b=>{
+      if(b.dataset.ran || reduce) return;
+      b.dataset.ran = '1';
+      const target = parseFloat(b.dataset.target), dp = +b.dataset.dp, suf = b.dataset.suffix;
+      const dur = 1200, t0 = performance.now();
+      (function step(now){
+        const p = clamp((now-t0)/dur, 0, 1);
+        const eased = 1 - Math.pow(1-p, 3);
+        b.textContent = (target*eased).toFixed(dp) + suf;
+        if(p < 1) requestAnimationFrame(step);
+        else b.textContent = target.toFixed(dp) + suf;
+      })(t0);
+    };
+    const cio = new IntersectionObserver(es=>{
+      es.forEach(e=>{ if(e.isIntersecting){ run(e.target); cio.unobserve(e.target); } });
+    },{threshold:.6});
+    cells.forEach(b=>{ if(b.dataset.target!==undefined) cio.observe(b); });
+  })();
+
+  /* ---------- extra staggered reveals (band headings) ---------- */
+  (function bandReveals(){
+    const heads = document.querySelectorAll('.band');
+    heads.forEach(h=>h.setAttribute('data-fx-rise',''));
+    const rio = new IntersectionObserver(es=>{
+      es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('fx-in'); rio.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -10% 0px'});
+    heads.forEach(h=>rio.observe(h));
+  })();
+
+  /* ---------- scroll-spy nav ---------- */
+  (function spy(){
+    const links = new Map();
+    document.querySelectorAll('.nav a[href^="#"]').forEach(a=>links.set(a.getAttribute('href').slice(1), a));
+    const targets = [...links.keys()].map(id=>document.getElementById(id)).filter(Boolean);
+    if(!targets.length) return;
+    const sio = new IntersectionObserver(es=>{
+      es.forEach(e=>{
+        if(e.isIntersecting){
+          links.forEach(a=>a.classList.remove('is-current'));
+          const a = links.get(e.target.id);
+          if(a) a.classList.add('is-current');
+        }
+      });
+    },{rootMargin:'-45% 0px -50% 0px'});
+    targets.forEach(t=>sio.observe(t));
+  })();
+
+  /* ---------- card stagger on reveal ---------- */
+  (function cardStagger(){
+    document.querySelectorAll('.grid').forEach(grid=>{
+      [...grid.children].forEach((card,i)=>{
+        card.style.transitionDelay = Math.min(i,6)*55 + 'ms';
+        const clear = e=>{ if(e.propertyName==='opacity'){ card.style.transitionDelay=''; card.removeEventListener('transitionend',clear); } };
+        card.addEventListener('transitionend', clear);
+      });
+    });
+  })();
+
+  if(reduce || !fine) return;   // remaining features are pointer + motion heavy
+
+  /* ---------- custom cursor ---------- */
+  const ring  = el('div','fx-cur fx-cur--ring is-hidden');
+  const dot   = el('div','fx-cur fx-cur--dot is-hidden');
+  const label = el('div','fx-cur--label');
+  document.body.append(ring, dot, label);
+  document.documentElement.classList.add('fx-cursor-on');
+
+  let mx = innerWidth/2, my = innerHeight/2;   // real pointer
+  let rx = mx, ry = my;                          // eased ring
+  let seen = false;
+  const HOT = 'a,button,.chip,.card,[data-map],[role="button"],input,label,summary';
+
+  addEventListener('pointermove', e=>{
+    if(e.pointerType && e.pointerType!=='mouse') return;
+    mx = e.clientX; my = e.clientY;
+    if(!seen){ seen = true; ring.classList.remove('is-hidden'); dot.classList.remove('is-hidden'); }
+    const t = e.target.closest ? e.target.closest(HOT) : null;
+    document.body.classList.toggle('fx-hot', !!t);
+    // light-section contrast
+    const overLight = !!(e.target.closest && e.target.closest('.house'));
+    document.body.classList.toggle('fx-light', overLight);
+    // contextual label
+    const lbl = t && t.getAttribute('data-cursor');
+    if(lbl){ label.textContent = lbl; document.body.classList.add('fx-label'); }
+    else document.body.classList.remove('fx-label');
+  }, {passive:true});
+
+  addEventListener('pointerdown', ()=>document.body.classList.add('fx-down'));
+  addEventListener('pointerup',   ()=>document.body.classList.remove('fx-down'));
+  addEventListener('pointerleave',()=>{ ring.classList.add('is-hidden'); dot.classList.add('is-hidden'); });
+  addEventListener('pointerenter',()=>{ if(seen){ ring.classList.remove('is-hidden'); dot.classList.remove('is-hidden'); } });
+
+  // label a few element types for the cursor
+  document.querySelectorAll('.card').forEach(c=>c.setAttribute('data-cursor','View'));
+  document.querySelectorAll('[data-map]').forEach(b=>b.setAttribute('data-cursor','Locate'));
+
+  /* ---------- magnetic buttons ---------- */
+  const magnets = [...document.querySelectorAll('.btn')];
+  magnets.forEach(btn=>{
+    btn.addEventListener('pointermove', e=>{
+      const r = btn.getBoundingClientRect();
+      const dx = (e.clientX - (r.left + r.width/2)) * 0.28;
+      const dy = (e.clientY - (r.top  + r.height/2)) * 0.35;
+      btn.style.transform = `translate(${clamp(dx,-14,14)}px,${clamp(dy,-12,12)}px)`;
+    });
+    btn.addEventListener('pointerleave', ()=>{ btn.style.transform=''; });
+  });
+
+  /* ---------- card 3D tilt ---------- */
+  document.querySelectorAll('.card').forEach(card=>{
+    card.addEventListener('pointerenter', ()=>card.classList.add('fx-tilting'));
+    card.addEventListener('pointermove', e=>{
+      const r = card.getBoundingClientRect();
+      const px = (e.clientX - r.left)/r.width  - .5;
+      const py = (e.clientY - r.top )/r.height - .5;
+      card.style.transform =
+        `perspective(760px) rotateX(${clamp(-py*7,-7,7)}deg) rotateY(${clamp(px*8,-8,8)}deg) translateY(-6px)`;
+    });
+    card.addEventListener('pointerleave', ()=>{ card.classList.remove('fx-tilting'); card.style.transform=''; });
+  });
+
+  /* ---------- single rAF loop: ring easing + parallax ---------- */
+  let smoothProgress = 0;
+  (function frame(){
+    // eased trailing ring, instant dot
+    rx = lerp(rx, mx, 0.18); ry = lerp(ry, my, 0.18);
+    ring.style.transform  = `translate(${rx}px,${ry}px)`;
+    dot.style.transform   = `translate(${mx}px,${my}px)`;
+    label.style.transform = `translate(${mx}px,${my}px)`;
+
+    // smooth progress bar
+    smoothProgress = lerp(smoothProgress, progressTarget, 0.15);
+    bar.style.transform = `scaleX(${smoothProgress})`;
+
+    // hero parallax (scroll + subtle pointer drift)
+    if(hero){
+      const hb = hero.getBoundingClientRect().bottom;
+      if(hb > 0){
+        const sc = scrollY;
+        if(ridge) ridge.style.transform = `translateY(${sc*0.16}px)`;
+        if(glow){
+          const gx = (mx/innerWidth - .5) * 26;
+          const gy = (my/innerHeight - .5) * 20 + sc*0.28;
+          glow.style.transform = `translate(${gx}px,${gy}px)`;
+        }
+      }
+    }
+    requestAnimationFrame(frame);
+  })();
+})();
+</script>
+</body>
+</html>
